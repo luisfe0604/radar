@@ -1,6 +1,15 @@
 const legendEl = document.querySelector(".legend");
 const toggleBtn = document.querySelector(".legend-toggle");
 
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('/sw.js')
+      .then(reg => console.log('Service Worker registrado!', reg))
+      .catch(err => console.log('Falha ao registrar SW:', err));
+  });
+}
+
+
 toggleBtn.addEventListener("click", () => {
   const legendEl = document.querySelector(".legend");
   if (!legendEl) return;
