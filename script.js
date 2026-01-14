@@ -147,6 +147,10 @@ const UPDATE_TIME = 3 * 60 * 1000;
 const FRAME_DELAY = 700; 
 const MAX_HISTORY = 10; 
 
+const pixPayload =
+"00020126580014br.gov.bcb.pix01368b837626-2dd8-4b18-855a-db1f283019b35204000053039865802BR5916Luis Felipe Mori6009Sao Paulo62290525REC6968249F485897727039396304F5AB";
+
+
 const lightningLayer = L.layerGroup();
 
 let frames = [];
@@ -156,6 +160,45 @@ let historyInterval = null;
 let mode = "live"; // live | history
 let simulationInterval = null;
 let simulationStep = 0;
+
+function openPix() {
+  document.getElementById("pixModal").classList.remove("hidden");
+}
+
+function closePix() {
+  document.getElementById("pixModal").classList.add("hidden");
+}
+
+function copyPix() {
+const btn = document.getElementById("btn-copy-pix");
+
+btn.addEventListener("click", () => {
+  const pixKey = "8b837626-2dd8-4b18-855a-db1f283019b3";
+
+  navigator.clipboard.writeText(pixKey);
+
+  const originalText = btn.textContent;
+  const originalBg = btn.style.backgroundColor;
+
+  btn.textContent = "Pix copiado";
+  btn.style.backgroundColor = "#16a34a";
+  btn.disabled = true;
+
+  setTimeout(() => {
+    btn.textContent = originalText;
+    btn.style.backgroundColor = originalBg;
+    btn.disabled = false;
+  }, 5000);
+});
+
+}
+
+new QRCode(document.getElementById("pixQrcode"), {
+  text: pixPayload,
+  width: 200,
+  height: 200
+});
+
 
 
 function createRadarLayer(time) {

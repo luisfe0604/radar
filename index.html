@@ -10,7 +10,7 @@
       href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
     />
     <link rel="manifest" href="manifest.json" />
-    <link rel="stylesheet" href="style.css?v=1.0.4" />
+    <link rel="stylesheet" href="style.css?v=1.0.5" />
   </head>
   <body>
     <div class="app">
@@ -40,7 +40,32 @@
       </main>
     </div>
 
+    <!-- Modal Pix -->
+    <div id="pixModal" class="pix-modal hidden">
+      <div class="pix-backdrop" onclick="closePix()"></div>
+
+      <div class="pix-box">
+        <button class="pix-close" onclick="closePix()">✕</button>
+
+        <h2>Apoie o projeto</h2>
+        <p>Se este radar te ajuda no dia a dia, considere apoiar via Pix</p>
+
+        <div id="pixQrcode"></div>
+
+        <div class="pix-key-box">
+          <button id="btn-copy-pix" onclick="copyPix()">Copiar chave</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="footer">
+      <span>
+        Radar gratuito •<a href="#" onclick="openPix(); return false;">Apoiar o projeto</a>
+      </span>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/qrcodejs/qrcode.min.js"></script>
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-    <script src="script.js?v=1.0.4"></script>
+    <script src="script.js?v=1.0.5"></script>
   </body>
 </html>
