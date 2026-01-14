@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script
+      async
+      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3775776659588831"
+      crossorigin="anonymous"
+    ></script>
+    <title>Radar de Chuva Animado</title>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="app">
+      <!-- Header -->
+      <header class="app-header">
+        <div class="title">Radar de Chuva</div>
+
+        <div class="update-time">
+          Última atualização: <span id="updateTime">--:--</span>
+        </div>
+      </header>
+
+      <!-- Controles -->
+      <div class="app-controls">
+        <button id="live">🔴 Ao vivo</button>
+        <button id="history">⏪ Últimos minutos</button>
+        <button id="simulate">⏩ Simulação 30 minutos</button>
+      </div>
+
+      <!-- Mapa -->
+      <main class="map-container">
+        <div id="map"></div>
+
+        <button class="legend-toggle" aria-label="Mostrar/ocultar legenda">
+          ✕
+        </button>
+      </main>
+    </div>
+
+    <footer class="ads-footer">
+      <span class="ads-label">Publicidade</span>
+      <div id="ad-slot"></div>
+    </footer>
+
+    <!-- rodape-mapa -->
+    <ins
+      class="adsbygoogle"
+      style="display: block"
+      data-ad-client="ca-pub-3775776659588831"
+      data-ad-slot="5910305719"
+      data-ad-format="auto"
+      data-full-width-responsive="true"
+    ></ins>
+    <script>
+      (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
