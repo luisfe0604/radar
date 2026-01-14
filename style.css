@@ -168,6 +168,7 @@ html, body {
   /* Mapa */
   .map-container {
     flex: 1;
+    padding-bottom: env(safe-area-inset-bottom, 20px);
   }
 
   #map {
@@ -207,7 +208,7 @@ html, body {
 
   /* Legenda */
   .legend {
-    bottom: 12px;
+    bottom: calc(20px + env(safe-area-inset-bottom));
     right: 12px;
     padding: 8px 10px;
     font-size: 12px;
