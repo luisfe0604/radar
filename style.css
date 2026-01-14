@@ -138,20 +138,6 @@ html, body {
   fill: rgba(0, 0, 0, 0.6);
 }
 
-.ads-footer {
-  background: #fff;
-  border-top: 1px solid #e5e7eb;
-  padding: 6px 0;
-  text-align: center;
-}
-
-.ads-label {
-  font-size: 10px;
-  opacity: 0.6;
-  display: block;
-  margin-bottom: 2px;
-}
-
 /* ========================= */
 /*        MOBILE             */
 /* ========================= */
