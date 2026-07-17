@@ -20,3 +20,9 @@
   align-items: flex-start;
   gap: 10px;
 }
+
+@media (max-width: 640px) {
+  .bottomLeftStack {
+    bottom: 132px;
+  }
+}
