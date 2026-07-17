@@ -1,0 +1,52 @@
+.maplibregl-ctrl-group {
+  background: var(--color-glass);
+  border: 1px solid var(--color-glass-border);
+  border-radius: var(--radius-lg) !important;
+  box-shadow: var(--shadow-panel) !important;
+  backdrop-filter: blur(var(--blur-panel));
+  -webkit-backdrop-filter: blur(var(--blur-panel));
+  overflow: hidden;
+}
+
+.maplibregl-ctrl-group button {
+  background: transparent;
+}
+
+.maplibregl-ctrl-group button + button {
+  border-top: 1px solid var(--color-glass-border);
+}
+
+.maplibregl-ctrl-group button:hover {
+  background-color: rgba(148, 163, 184, 0.12);
+}
+
+.maplibregl-ctrl-icon {
+  filter: invert(1) brightness(1.7);
+}
+
+.maplibregl-ctrl-scale {
+  background: var(--color-glass);
+  border: 1px solid var(--color-glass-border);
+  color: var(--color-text-primary);
+  border-radius: var(--radius-sm);
+  backdrop-filter: blur(var(--blur-panel));
+  -webkit-backdrop-filter: blur(var(--blur-panel));
+  padding: 2px 6px;
+  font-family: var(--font-family-mono);
+  font-size: 11px;
+}
+
+.maplibregl-ctrl-attrib {
+  background: transparent !important;
+  color: var(--color-text-muted);
+  font-family: var(--font-family-sans);
+  font-size: 11px;
+}
+
+.maplibregl-ctrl-attrib a {
+  color: var(--color-text-muted);
+}
+
+.maplibregl-ctrl-attrib-button {
+  filter: invert(1) brightness(1.7);
+}

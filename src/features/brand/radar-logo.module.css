@@ -1,0 +1,17 @@
+.sweep {
+  transform-origin: 32px 32px;
+  animation: sweepRotate 3.2s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sweep {
+    animation: none;
+    transform: rotate(45deg);
+  }
+}
+
+@keyframes sweepRotate {
+  to {
+    transform: rotate(360deg);
+  }
+}
