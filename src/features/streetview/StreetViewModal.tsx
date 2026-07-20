@@ -36,7 +36,7 @@ export function StreetViewModal() {
       </div>
       <div className={styles.body}>
         <StreetViewViewer
-          imageId={target.imageId}
+          image={target.image}
           weatherCode={target.weatherCode}
           precipitation={target.precipitation}
           isDay={target.isDay}

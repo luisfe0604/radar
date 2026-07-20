@@ -1,4 +1,5 @@
-export interface NearbyImage {
+export interface MapillaryNearbyImage {
+  source: "mapillary";
   id: string;
   lat: number;
   lon: number;
@@ -6,3 +7,14 @@ export interface NearbyImage {
   isPanoramic: boolean;
   distanceMeters: number;
 }
+
+export interface KartaViewNearbyPhoto {
+  source: "kartaview";
+  imageUrl: string;
+  lat: number;
+  lon: number;
+  headingDegrees: number;
+  distanceMeters: number;
+}
+
+export type NearbyStreetImage = MapillaryNearbyImage | KartaViewNearbyPhoto;

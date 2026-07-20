@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { findNearestMapillaryImage } from "@/lib/streetview/mapillary";
+import { findNearestKartaViewPhoto } from "@/lib/streetview/kartaview";
 
 export async function GET(request: NextRequest) {
   const lat = Number(request.nextUrl.searchParams.get("lat"));
@@ -12,7 +13,9 @@ export async function GET(request: NextRequest) {
     );
   }
 
-  const image = await findNearestMapillaryImage(lat, lon);
+  const image =
+    (await findNearestMapillaryImage(lat, lon)) ??
+    (await findNearestKartaViewPhoto(lat, lon));
 
   return NextResponse.json(
     { image },

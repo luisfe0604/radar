@@ -7,12 +7,13 @@ import {
   useState,
   type ReactNode,
 } from "react";
+import type { NearbyStreetImage } from "@/lib/streetview/types";
 
 export interface StreetViewTarget {
   lat: number;
   lon: number;
   label: string;
-  imageId: string;
+  image: NearbyStreetImage;
   weatherCode: number;
   precipitation: number;
   isDay: boolean;

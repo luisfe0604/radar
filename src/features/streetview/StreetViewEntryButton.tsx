@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { useStreetView } from "./streetview-context";
-import type { NearbyImage } from "@/lib/streetview/types";
+import type { NearbyStreetImage } from "@/lib/streetview/types";
 import styles from "./street-view-entry-button.module.css";
 
 interface StreetViewEntryButtonProps {
@@ -23,16 +23,16 @@ export function StreetViewEntryButton({
   isDay,
 }: StreetViewEntryButtonProps) {
   const { open } = useStreetView();
-  const [nearbyImage, setNearbyImage] = useState<NearbyImage | null | undefined>(
-    undefined,
-  );
+  const [nearbyImage, setNearbyImage] = useState<
+    NearbyStreetImage | null | undefined
+  >(undefined);
 
   useEffect(() => {
     let cancelled = false;
 
     fetch(`/api/streetview/nearby?lat=${lat}&lon=${lon}`)
       .then((res) => res.json())
-      .then((data: { image: NearbyImage | null }) => {
+      .then((data: { image: NearbyStreetImage | null }) => {
         if (!cancelled) setNearbyImage(data.image);
       })
       .catch(() => {
@@ -59,7 +59,7 @@ export function StreetViewEntryButton({
           lat,
           lon,
           label,
-          imageId: nearbyImage.id,
+          image: nearbyImage,
           weatherCode,
           precipitation,
           isDay,
