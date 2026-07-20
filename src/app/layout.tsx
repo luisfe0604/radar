@@ -3,6 +3,7 @@ import { IBM_Plex_Mono, IBM_Plex_Sans } from "next/font/google";
 import "maplibre-gl/dist/maplibre-gl.css";
 import "@/features/map/maplibre-theme.css";
 import "./globals.css";
+import { ServiceWorkerCleanup } from "@/features/system/ServiceWorkerCleanup";
 
 const plexSans = IBM_Plex_Sans({
   variable: "--font-sans",
@@ -28,7 +29,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR" className={`${plexSans.variable} ${plexMono.variable}`}>
-      <body>{children}</body>
+      <body>
+        <ServiceWorkerCleanup />
+        {children}
+      </body>
     </html>
   );
 }
