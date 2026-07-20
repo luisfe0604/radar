@@ -31,3 +31,13 @@
   color: var(--color-text-muted);
   margin-top: 1px;
 }
+
+@media (max-width: 640px) {
+  .pill {
+    padding: 6px;
+  }
+
+  .wordmark {
+    display: none;
+  }
+}

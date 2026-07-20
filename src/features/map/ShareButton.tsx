@@ -16,9 +16,17 @@ export function ShareButton() {
     }
   }
 
+  const text = copied ? "Link copiado" : "Compartilhar posição";
+
   return (
-    <button type="button" className={styles.button} onClick={handleClick}>
-      {copied ? "Link copiado" : "Compartilhar posição"}
+    <button
+      type="button"
+      className={styles.button}
+      onClick={handleClick}
+      aria-label={text}
+    >
+      <span aria-hidden="true">{copied ? "✓" : "🔗"}</span>
+      <span className={styles.label}>{text}</span>
     </button>
   );
 }

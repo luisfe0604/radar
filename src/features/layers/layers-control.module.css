@@ -94,3 +94,32 @@
   border-color: var(--color-accent);
   color: #0b1220;
 }
+
+.label {
+  white-space: nowrap;
+}
+
+@media (max-width: 640px) {
+  .wrapper {
+    width: auto;
+    flex-shrink: 0;
+  }
+
+  .toggleButton {
+    width: 44px;
+    height: 40px;
+    padding: 0;
+    justify-content: center;
+  }
+
+  .label,
+  .chevron {
+    display: none;
+  }
+
+  .panel {
+    left: auto;
+    right: 0;
+    width: 220px;
+  }
+}

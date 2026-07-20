@@ -10,6 +10,13 @@
   width: min(360px, calc(100vw - 32px));
 }
 
+.topLeftRow {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+}
+
 .bottomLeftStack {
   position: absolute;
   left: 16px;
@@ -22,7 +29,14 @@
 }
 
 @media (max-width: 640px) {
+  .topLeftRow {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
   .bottomLeftStack {
     bottom: 132px;
+    flex-direction: row;
+    align-items: center;
   }
 }

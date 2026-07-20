@@ -15,8 +15,10 @@ export function LayersControl() {
         type="button"
         className={styles.toggleButton}
         onClick={() => setIsOpen((prev) => !prev)}
+        aria-label="Camadas"
       >
-        <span>🗂️ Camadas</span>
+        <span aria-hidden="true">🗂️</span>
+        <span className={styles.label}>Camadas</span>
         <span className={styles.chevron}>{isOpen ? "▲" : "▼"}</span>
       </button>
 

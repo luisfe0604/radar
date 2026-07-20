@@ -43,3 +43,18 @@
   font-size: 10px;
   color: var(--color-text-muted);
 }
+
+@media (max-width: 640px) {
+  .panel {
+    padding: 8px 10px;
+    gap: 4px;
+  }
+
+  .title {
+    display: none;
+  }
+
+  .gradient {
+    width: 110px;
+  }
+}

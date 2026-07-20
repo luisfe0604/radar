@@ -33,8 +33,10 @@ export default function Home() {
             <MapUrlSync />
             <div className={styles.topLeftStack}>
               <BrandMark />
-              <SearchBox />
-              <LayersControl />
+              <div className={styles.topLeftRow}>
+                <SearchBox />
+                <LayersControl />
+              </div>
             </div>
             <div className={styles.bottomLeftStack}>
               <RadarLegend />

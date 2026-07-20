@@ -50,3 +50,10 @@
 .maplibregl-ctrl-attrib-button {
   filter: invert(1) brightness(1.7);
 }
+
+@media (max-width: 640px) {
+  .maplibregl-ctrl-top-right > .maplibregl-ctrl-group:first-child,
+  .maplibregl-ctrl-top-right > .maplibregl-ctrl-group:last-child {
+    display: none;
+  }
+}
