@@ -1,6 +1,7 @@
 "use client";
 
 import { useLocation } from "@/features/location/location-context";
+import { StreetViewEntryButton } from "@/features/streetview/StreetViewEntryButton";
 import { useLocationWeather } from "./use-location-weather";
 import { CurrentConditions } from "./CurrentConditions";
 import { HourlyForecast } from "./HourlyForecast";
@@ -41,6 +42,14 @@ export function LocationPanel() {
         {weather && (
           <>
             <CurrentConditions weather={weather} />
+            <StreetViewEntryButton
+              lat={selectedLocation.lat}
+              lon={selectedLocation.lon}
+              label={selectedLocation.label}
+              weatherCode={weather.current.weatherCode}
+              precipitation={weather.current.precipitation}
+              isDay={weather.current.isDay}
+            />
             <HourlyForecast hourly={weather.hourly} />
             <DailyForecast daily={weather.daily} />
             {weather.daily[0] && (

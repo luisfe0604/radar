@@ -16,6 +16,8 @@ import { RadarLegend } from "@/features/radar/RadarLegend";
 import { RadarProvider } from "@/features/radar/radar-context";
 import { RadarTimeline } from "@/features/radar/RadarTimeline";
 import { SearchBox } from "@/features/search/SearchBox";
+import { StreetViewModal } from "@/features/streetview/StreetViewModal";
+import { StreetViewProvider } from "@/features/streetview/streetview-context";
 import styles from "./page.module.css";
 
 export default function Home() {
@@ -23,28 +25,31 @@ export default function Home() {
     <LayersProvider>
       <RadarProvider>
         <LocationProvider>
-          <MapView>
-            <MapDimmer />
-            <RadarLayer />
-            <WeatherOverlayLayers />
-            <MapClickHandler />
-            <SelectedLocationMarker />
-            <MapControls />
-            <MapUrlSync />
-            <div className={styles.topLeftStack}>
-              <BrandMark />
-              <div className={styles.topLeftRow}>
-                <SearchBox />
-                <LayersControl />
+          <StreetViewProvider>
+            <MapView>
+              <MapDimmer />
+              <RadarLayer />
+              <WeatherOverlayLayers />
+              <MapClickHandler />
+              <SelectedLocationMarker />
+              <MapControls />
+              <MapUrlSync />
+              <div className={styles.topLeftStack}>
+                <BrandMark />
+                <div className={styles.topLeftRow}>
+                  <SearchBox />
+                  <LayersControl />
+                </div>
               </div>
-            </div>
-            <div className={styles.bottomLeftStack}>
-              <RadarLegend />
-              <ShareButton />
-            </div>
-            <RadarTimeline />
-            <LocationPanel />
-          </MapView>
+              <div className={styles.bottomLeftStack}>
+                <RadarLegend />
+                <ShareButton />
+              </div>
+              <RadarTimeline />
+              <LocationPanel />
+            </MapView>
+            <StreetViewModal />
+          </StreetViewProvider>
         </LocationProvider>
       </RadarProvider>
     </LayersProvider>

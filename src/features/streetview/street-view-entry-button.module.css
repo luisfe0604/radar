@@ -1,0 +1,25 @@
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  padding: 10px 14px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-glass-border);
+  background: rgba(148, 163, 184, 0.1);
+  color: var(--color-text-primary);
+  font-family: var(--font-family-sans);
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.button:hover {
+  background: rgba(148, 163, 184, 0.18);
+}
+
+.status {
+  font-size: 12px;
+  color: var(--color-text-muted);
+}
