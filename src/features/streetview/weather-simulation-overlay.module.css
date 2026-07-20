@@ -11,118 +11,53 @@
   inset: 0;
   background: linear-gradient(
     to top,
-    rgba(220, 225, 230, 0.55),
-    rgba(220, 225, 230, 0.18) 55%,
+    rgba(215, 222, 230, 0.4),
+    rgba(215, 222, 230, 0.12) 55%,
     transparent
   );
-  backdrop-filter: blur(2px);
-  -webkit-backdrop-filter: blur(2px);
+  backdrop-filter: blur(1.5px);
+  -webkit-backdrop-filter: blur(1.5px);
 }
 
-.rain {
+.vignette {
   position: absolute;
-  inset: -20% -10%;
-  background-image: repeating-linear-gradient(
-    115deg,
-    transparent 0,
-    transparent 8px,
-    rgba(210, 226, 240, 0.4) 9px,
-    transparent 10px
+  inset: 0;
+  background: radial-gradient(
+    ellipse at center,
+    transparent 45%,
+    rgba(5, 8, 15, 0.42) 100%
   );
-  background-size: 3px 140px;
-  animation: rainFall 0.35s linear infinite;
-}
-
-.rain-light {
-  opacity: 0.35;
-  animation-duration: 0.5s;
-}
-
-.rain-moderate {
-  opacity: 0.55;
-  animation-duration: 0.35s;
-}
-
-.rain-heavy {
-  opacity: 0.8;
-  animation-duration: 0.2s;
-}
-
-@keyframes rainFall {
-  from {
-    background-position: 0 -140px;
-  }
-  to {
-    background-position: -40px 0;
-  }
-}
-
-.snow {
-  position: absolute;
-  inset: -20% -10%;
-  background-image: radial-gradient(
-      circle,
-      rgba(255, 255, 255, 0.85) 1px,
-      transparent 1.6px
-    ),
-    radial-gradient(circle, rgba(255, 255, 255, 0.6) 1px, transparent 1.6px);
-  background-size:
-    60px 60px,
-    90px 90px;
-  background-position:
-    0 0,
-    30px 30px;
-  opacity: 0.7;
-  animation: snowFall 6s linear infinite;
-}
-
-@keyframes snowFall {
-  from {
-    background-position:
-      0 0,
-      30px 30px;
-  }
-  to {
-    background-position:
-      40px 300px,
-      70px 340px;
-  }
 }
 
 .lightning {
   position: absolute;
   inset: 0;
-  background: #fff;
+  background: #eef4ff;
   opacity: 0;
-  animation: lightningFlash 7s ease-in-out infinite;
+  animation: lightningFlash 8s ease-in-out infinite;
 }
 
 @keyframes lightningFlash {
   0%,
-  92%,
-  94%,
+  91%,
+  93%,
   100% {
     opacity: 0;
   }
-  93% {
-    opacity: 0.75;
+  91.5% {
+    opacity: 0.5;
   }
-  93.5% {
-    opacity: 0.1;
+  92% {
+    opacity: 0.05;
   }
-  93.8% {
-    opacity: 0.55;
+  92.4% {
+    opacity: 0.35;
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .rain,
-  .snow,
   .lightning {
     animation: none;
-  }
-
-  .lightning {
     opacity: 0;
   }
 }

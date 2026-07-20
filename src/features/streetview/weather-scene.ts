@@ -50,30 +50,48 @@ export function getAtmosphereFilter(scene: WeatherScene): string {
   let saturate = 1;
   let brightness = 1;
   let contrast = 1;
+  let hueRotate = 0;
 
+  if (scene.cloudiness === "clear" && scene.isDay) {
+    saturate = 1.08;
+    brightness = 1.03;
+    contrast = 1.02;
+  }
   if (scene.cloudiness === "partly") {
-    saturate = 0.9;
-    brightness = 0.95;
+    saturate = 0.92;
+    brightness = 0.97;
   }
   if (scene.cloudiness === "overcast") {
-    saturate = 0.7;
-    brightness = 0.82;
-    contrast = 0.95;
+    saturate = 0.74;
+    brightness = 0.86;
+    contrast = 0.96;
+    hueRotate = -4;
+  }
+  if (scene.rainIntensity !== "none") {
+    saturate -= 0.08;
+    brightness -= 0.05;
+    hueRotate -= 3;
+  }
+  if (scene.hasSnow) {
+    saturate -= 0.15;
+    brightness += 0.05;
   }
   if (scene.hasFog) {
-    saturate = 0.5;
-    brightness = 0.9;
-    contrast = 0.85;
+    saturate = 0.58;
+    brightness = 0.93;
+    contrast = 0.88;
   }
   if (scene.hasStorm) {
-    saturate = 0.55;
+    saturate = 0.52;
     brightness = 0.6;
-    contrast = 1.05;
+    contrast = 1.06;
+    hueRotate = -6;
   }
   if (!scene.isDay) {
-    saturate *= 0.6;
-    brightness *= 0.55;
+    saturate *= 0.55;
+    brightness *= 0.5;
+    hueRotate -= 8;
   }
 
-  return `saturate(${saturate.toFixed(2)}) brightness(${brightness.toFixed(2)}) contrast(${contrast.toFixed(2)})`;
+  return `saturate(${saturate.toFixed(2)}) brightness(${brightness.toFixed(2)}) contrast(${contrast.toFixed(2)}) hue-rotate(${hueRotate.toFixed(0)}deg)`;
 }

@@ -13,16 +13,12 @@ export function WeatherSimulationOverlay({
   isDay,
 }: WeatherSimulationOverlayProps) {
   const scene = classifyWeatherScene({ weatherCode, precipitation, isDay });
+  const showVignette = scene.hasStorm || scene.rainIntensity === "heavy" || !isDay;
 
   return (
     <div className={styles.overlay} aria-hidden="true">
       {scene.hasFog && <div className={styles.fog} />}
-      {scene.rainIntensity !== "none" && (
-        <div
-          className={`${styles.rain} ${styles[`rain-${scene.rainIntensity}`]}`}
-        />
-      )}
-      {scene.hasSnow && <div className={styles.snow} />}
+      {showVignette && <div className={styles.vignette} />}
       {scene.hasStorm && <div className={styles.lightning} />}
     </div>
   );
